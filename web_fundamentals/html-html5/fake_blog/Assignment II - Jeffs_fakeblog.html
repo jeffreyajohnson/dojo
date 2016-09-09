@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="Jeff's Blog">
+	<meta name="keywords" content="HTML, Blog, CodingDojo Assignment II">
+	<meta name="author" content="Jeff Johnson">
+	<title>Jeff's Blog</title>	
+</head>
+
+<body>		
+	<h1><img src="https://dl.dropboxusercontent.com/u/108902686/Jeff-Portrait1.jpg" alt="Jeff's Photo" width="150" height="150">Welcome to Jeff's Blog!</h1>
+	<h1>This is a blog about nothing.</h1>
+	<p>Really - I mean it's about <span style="color:red">NOTHING!</span></p>
+		<ul>
+			<li><a href="#word">The Word Nothing</a></li>
+			<li><a href="#town">A Town call Nothing</a></li> 
+		</ul>
+	<div id="blog_entry">
+		<h2 id="word">The Word nothing</h2>
+			<p>According to Merriam-Webster's Dictionary, here is the definition of the word 
+				<a href="http://www.merriam-webster.com/dictionary/nothing">nothing.</a>
+			</p>
+				<ol>
+					<li>:  not any thing :  no thing &ltleaves nothing to the imagination&gt </li>
+					<li>:  no part</li>
+					<li>:  one of no interest, value, or consequence &ltthey mean nothing to me&gt</li>
+					<p> 
+					- nothing doing <br>
+					:  by no means :  definitely no<br>
+					<br>
+					- nothing for it<br>
+					:  no alternative &ltnothing for it but to start over&gt
+					</p>	
+				</ol>
+	</div>
+		
+	<div id="blog_entry">
+		<h2 id="town">The Town Nothing</h2>
+			<p>Did you know that there is a town in Arizona called "Nothing"?</p>
+			<table>  
+				<thead>
+					<tr>  <!--Why is the header column not aligned with data column?--> 
+						<th>Nothing, AZ</th>
+						<th><a href="https://maps.google.com/maps?ll=34.479722,-113.335278&q=34.479722,-113.335278&hl=en&t=m&z=12">Google Map</a></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>County</td>
+						<td>Mohave County</td>
+					</tr>
+					<tr>
+						<td>Settled</td>
+						<td>1977</td>
+					</tr>
+					<tr>
+						<td>Elevation</td>
+						<td>3,268 ft (996 m)</td>
+					</tr>
+					<tr>
+						<td>Population (2008)</td>
+						<td>0</td>
+					</tr>
+					<tr>
+						<td>Coordinates:</td>
+						<td>34°28′47″N 113°20′7″W</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<p>It also prides itself on being the <span style="color:green">"rattlesnake capital of Arizona."</span> It's basically gone now - nothing but a ghost town (no pun intended).  All that's there is an old gas station and garage.</p>
+
+			<img src="https://dl.dropboxusercontent.com/u/108902686/NothingAz-OldMart.jpg" alt="Nothing's Gas Station" width="500" height="500">
+			<img src="https://dl.dropboxusercontent.com/u/108902686/NothingAz-Sign.jpg" alt="Nothing Town Sign" width="500" height="500">
+			<!--Why do these images seem to lose 1x1 ratio even though height and width parameters are equal?-->
+
+			<p>Now you would think a ghost town in Arizona would be a relic from the old west, but it's not!  This town was established in 1977 - less than 40 years ago! For me, 1977 is not all that long ago; that was the year I graduated high school.   Oh gawd!  Does that mean I'm an old relic too?  Are the desert winds just waiting to wisp me away????
+			</p>
+	</div>
+	<div id="form">
+		<h3>Survey</h3>
+			<p>Please take the fake survey.............</p> 
+			<form action="fakesurvey.php">
+				<label>First Name:<input type="text" name="fist_name"></label>
+				<label>Last Name:<input type="text" name="last_name"></label>
+				<p>Pick Your Colors:</p>
+				<label><input type="checkbox" name="color" value="red">Red</label><br>
+				<label><input type="checkbox" name="color" value="yellow">Yellow</label><br>
+				<label><input type="checkbox" name="color" value="green">Green</label><br>
+				<label><input type="checkbox" name="color" value="black">Black</label><br>
+				<label><input type="checkbox" name="color" value="white">White</label><br>
+				<label><input type="checkbox" name="color" value="other">Other:</label>
+				<label> Specify:<input type="text" name="other"></label>
+				<br>
+				
+				<p>Do you find coding interesting?</p>
+				<label><input type="radio" name="opinion" value="yes">Yes</label><br>
+				<label><input type="radio" name="opinion" value="no">No</label><br>
+				<label><input type="radio" name="opinion" value="maybe">Maybe</label><br>
+				<label><input type="radio" name="opinion" value="sometimes">Sometimes</label><br><br>
+				<input type="submit" value="Submit">
+			</form>  
+	</div>
+	<div id="footer">
+		<h1>Thank you for reading.  Have a nice day!</h1>
+	</div>
+</body>
+</html>
