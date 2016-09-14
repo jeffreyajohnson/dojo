@@ -1,0 +1,192 @@
+*{
+  font-family: sans-serif;
+  margin: 0px;
+  padding: 0px;
+}
+
+#wrapper{
+  width: 1200px;
+  height: 900px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+#header{
+  width: 1200px;
+  height: 70px;
+  border-bottom: 1px solid;
+}
+
+#header-left{
+  background-color: white;
+  width: 400px;
+  height: 70px;
+  padding-left: 30px;
+  margin-right: 0px;
+  display: inline-block;
+}
+#header-right{
+  background-color: white;
+  width: 710px;
+  height: 70px;
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 50px;
+}
+  #header-right h1{
+    font-size: 20px;
+    padding: 30px 0px 0px 360px;
+  }
+#navbar{
+  background-color: silver; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(white,silver, white, white); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(white,silver, white, white); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(white, silver, white, white); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(white,silver, white, white); /* Standard syntax (must be last) */
+  width: 1200px;
+  height: 30px;
+  padding-left: 20px;
+  padding-top: 10px;
+  padding-bottom: 30px;
+
+}
+  #navbar li{
+    display: inline;
+    padding: 10px;
+  }
+  #navbar a{
+    text-decoration: none;
+  	color: rgb(120, 120, 120);
+    font-size: 14px;
+  	font-weight: 600;
+  }
+
+#main{
+  background-color: black; /* For browsers that do not support gradients */
+/* For Safari 5.1 to 6.0 */
+  background: -webkit-linear-gradient(left,black,DarkSlateGray, black);
+  /* For Opera 11.1 to 12.0 */
+  background: -o-linear-gradient(left,black,DarkSlateGray, black);
+  /* For Fx 3.6 to 15 */
+  background: -moz-linear-gradient(left,black,DarkSlateGray, black);
+  /* Standard syntax */
+  background: linear-gradient(to right, black, DarkSlateGray, black);
+  width: 1200px;
+  height: 725px;
+  padding: 10px 40px;
+}
+
+#main-top{
+  width: 1120px;
+  height: 310px;
+  margin-top: 10px;
+}
+
+  #main-img{
+    background-color: white;
+    width: 400px;
+    height: 300px;
+    display: inline-block;
+    vertical-align: top;
+    padding: 5px;
+  }
+  #maintext{
+    width: 670px;
+    height: 265px;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 15px;
+  }
+  #maintext h2{
+    font-size: 16px;
+  }
+
+  #maintext-top{
+    background-color: limegreen;
+    width: 675px;
+    height: 15px;
+    padding: 10px 0px 10px 15px;
+  }
+
+  #maintext-bottom{
+    background-color: grey;/* For browsers that do not support gradients */
+    /* For Safari 5.1 to 6.0 */
+    background: -webkit-linear-gradient(grey, DarkSlateGray,DarkSlateGray);
+    /* For Opera 11.1 to 12.0 */
+    background: -o-linear-gradient(left,grey, DarkSlateGray,DarkSlateGray);
+    /* For Fx 3.6 to 15 */
+    background: -moz-linear-gradient(left,grey, DarkSlateGray,DarkSlateGray);
+    /* Standard syntax */
+    background: linear-gradient(to right, grey, DarkSlateGray,DarkSlateGray);
+    width: 666px;
+    height: 275px;
+    color: white;
+    padding-left: 25px;
+  }
+    #maintext-bottom h2{
+      font-size: 18px;
+      padding-top: 20px;
+    }
+    #maintext-bottom p{
+      font-size: 16px;
+      padding-right: 20px;
+      line-height: 1.1;
+    }
+
+#main-center{
+  width: 980px;
+  height: 20px;
+  position: relative;
+  padding: 15px 0px 10px 10px;
+}
+  #logo{
+    background-color: white;
+    height: 20px;
+    width: 63px;
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  #centertext{
+    width: 663px;
+    display: inline-block;
+    vertical-align: top;
+    padding: 5px;
+    color: gold;
+    font-weight: bold;
+    font-size: 20px;
+  }
+#main-bottom{
+  width: 1200px;
+  height: 580px;
+}
+
+.block{
+  background-color: white;
+  height: 300px;
+  width: 260px;
+  display: inline-block;
+  vertical-align: top;
+  margin: 10px 23px 10px 0px;
+}
+.blockheader{
+  background-color: limegreen;
+  height: 20px;
+  width: 245px;
+  padding: 5px 0px 5px 15px;
+}
+  .blockheader h5{
+    font-weight: 800;
+  }
+.blocktext{
+font-size: 13px;
+/*background-color: blue;*/
+height: 225px;
+}
+  .blocktext p{
+  padding: 15px;
+  /*font-size: 12px;*/
+  }
+  .blockarrow a{
+    padding-left: 120px;
+  }
