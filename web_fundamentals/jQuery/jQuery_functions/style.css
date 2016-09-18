@@ -1,0 +1,112 @@
+*{
+	margin:0px;
+	padding: 0px;
+	/*outline: 1px dotted blue;*/
+}
+
+#wrapper{
+	width: 500px;
+	margin: 0px auto;
+	padding: 20px;
+}
+#main, #header{
+	border: 2px solid black;
+}	
+#header{
+	background-color: lightgrey;
+	border-bottom: none;
+}
+#header h1{
+	text-align: center;
+	font-size: 14px;
+}
+#header img{
+	height: 20px;
+	width: 20px;
+	margin: 5px;	
+	display: inline-block;
+}
+#inputs{
+	display: inline-block;
+	vertical-align: top;
+	margin: 5px;
+}
+ 
+#main{
+	padding: 0px 20px;
+}
+	#main > div:nth-of-type(1){
+		border-top: none;
+	}
+
+.section_block{
+	height: 100px;
+	border-top: 2px solid black;
+}
+	.section_block:first-child{
+		border-top: none;
+	}
+	.section_block h1{
+		font-size: 20px;
+		text-align: center;
+		padding-top: 10px;
+	}
+	.section_block button{
+		padding:10px;
+		font-size: 14px;
+		border: 1px solid black;
+		display: inline-block;
+		vertical-align: top;
+		margin: 2px;
+
+	}
+	.section_block p{
+			display: inline-block;
+	}
+	.section_block p{ 
+	width: 350px;
+	display: inline-block;
+}
+		.section_block p button{ 
+			border: 1px solid black;
+		}
+		
+.selected{
+	color: blue;
+	background-color: yellow;
+}
+.h1_reset_class{
+color: black;
+background-color: none;
+}
+
+#fspan{
+	display: none;
+}
+
+#data_div button{
+	font-size: 12px;
+	border: 1px solid black;
+	display: inline-block;
+	vertical-align: top;
+	
+	padding: 2px 5px;;
+	line-height: 1.2;
+}
+
+#show_me{
+	display: none;
+	background-color: yellow;
+}
+#mouse{
+		position:fixed;
+    left:10px;
+    top:200px;
+}
+#footer{
+	height: 20px;
+	background-color: lightgrey;
+	border-bottom: 2px solid black;
+	border-left: 2px solid black;
+	border-right: 2px solid black;
+}

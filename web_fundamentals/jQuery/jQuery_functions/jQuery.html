@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script
+			  src="https://code.jquery.com/jquery-2.2.4.js"
+			  integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+			  crossorigin="anonymous"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+
+			console.log("jQuery loaded successfully");
+
+			// AddClass
+			$('#addclass').click(function(){
+				console.log("got addclass");	
+				$('h1').addClass('selected');		
+			});
+
+			// Click
+			$('#click').click(function(){
+				console.log("got click");
+				alert("Clicked Worked!");			
+			});
+
+			// Focus
+			$("#focus").focus(function(){
+        console.log("got focus");
+		    $("#fspan").css("display", "inline").fadeOut(2000);
+        });
+			
+			// Val
+			$("#val").click(function(){
+				console.log("got val");
+				var focus_value = $( "#focus:text").val();
+				console.log("focus_value=", focus_value);
+				$("#val_input:text").val(focus_value );
+			})
+
+			//Text
+			$('#text').click(function(){
+				console.log("got text");
+				// alert($("#text_block").text());
+				$('#text_block p').text("new text!");
+			})
+
+			//Attr
+			$('#attr').click(function(){
+				console.log("got attr");
+				$('h1').attr('class', "h1_reset_class")
+			})
+
+			//Html
+			$( '#html').click(function(){
+				console.log("got html");
+				$('#html').html("New text here...!!!")
+			})
+			
+			//Data
+			$('#get_data').click(function(){
+				console.log("inside get_data");
+				alert($('#data_div').data("greeting"));
+			})
+			$('#set_data').click(function(){
+				console.log("inside set_data");
+				$('#data_div').data("greeting", "Hello World")
+			})
+
+			//Before
+			$('#before button').click(function(){
+				console.log("got before");
+				$('#before p').before( "<b> New text inserted!</b>.." );
+			})
+			//After
+			$('#after button').click(function(){
+				console.log("got after");
+				$('#after p').after( "<b> New text inserted!</b>.." );
+			})
+			//Append
+			$('#append button').click(function(){
+				console.log("got append");
+				$('#append p').append( "<b> New text appended!</b>.." )
+			})
+
+			//Show
+			$('#show button').click(function(){
+				console.log("got show");
+				$('#show h6').show("slow");
+			})
+			//Hide - note: using different selector style from show above
+			$('#hide').click(function(){  // actually - no 'button' required.  aka "#hide button"
+				console.log("got hide");
+				$('#show_me').hide("slow");  //vs '#show h6'
+			})
+
+			//Toggle
+			$('#toggle').click(function(){
+				console.log("got toggle");
+				$('#toggle p').toggle();
+			})
+
+			//FadeIn
+			$('#mouse').hide();
+			$('#fadein').click(function(){
+				console.log('got fadein');
+				$('#mouse').fadeIn('slow', function() {		
+				});
+			})
+			//Fadeout
+			$('#fadeout').click(function(){
+				console.log('got fadeout');
+				$('#mouse').fadeOut('fast', function() {
+				});					
+			});
+
+			//Slideup
+			$('#slideup').click(function(){
+				console.log("got slideup");
+				$('#mouse').slideUp('slow', function() {				
+				});
+			})
+
+			//Slidedown
+			$('#slidedown').click(function(){
+				console.log("got slidedown");
+				$('#mouse').slideDown('fast', function() {				
+				});
+			})
+			
+			//SlideToggle
+			$('#slidetoggle').click(function(){
+				console.log("got slidetoggle");
+				$('#mouse').slideToggle(400);
+			});
+		
+		})	// end document ready
+	</script>
+
+</head>
+<body>
+	<div id="wrapper">
+		<img id="mouse" src="images/mouse.jpg" width="325px" alt="mouse pic">
+		<div id="header">
+			<h1>My jQuery basic assignment!</h1>
+			<img src="images/left_button.png" alt="home_button.png">
+			<img src="images/right_button.png" alt="home_button.png">
+			<img src="images/cancel_button.png" alt="home_button.png">
+			<img src="images/home_button.png" alt="home_button.png">
+			<div id="inputs">
+				<input  type="text" name="TBD">
+				<input type="text" name="search">
+			</div>
+
+		</div> <!-- end header -->
+		<div id="main">
+
+			<div class="section_block">
+				<h1>Click</h1>
+				<button id="click">Click</button>
+				<p>Click the button to activate an alert.</p>
+			</div>
+
+			<div class="section_block">
+				<h1>AddClass</h1>
+				<button id="addclass">AddClass</button>
+				<p>Click the button to add class which changes the fonts blue on yellow background.<br>(<b>change back</b> via <b>Attr</b> below)</p>
+			</div>
+
+			<div class="section_block">
+				<h1>Attr</h1>
+				<button id="attr">Attr</button>
+				<p>Click the button to change class background color from AddClass above via attr class substitution.</p>
+			</div>
+
+			<div class="section_block">
+				<h1>Focus</h1>				
+				<p>Click in the input field to see a focus event</p>			
+				<input type="text" id="focus" value="foo" ><p><span id="fspan">FOCUS MAN FOCUS!</span></p>
+			</div>
+
+			<div class="section_block">
+				<h1>Val</h1>
+				<button id="val">Val</button>
+				<p>Click the button to see value of input field in Focus block above.</p>
+				<input type="text" id="val_input">
+			</div>
+
+			<div class="section_block" id="text_block">
+				<h1>Text</h1>
+				<button id="text">Text</button>
+				<p>Click the "Text" button to change this with "new text".</p>				
+			</div>
+
+			<div class="section_block">
+				<h1>Html</h1>
+				<p id="html">Click this paragraph to change to new text content.</p>
+			</div>
+
+			<div class="section_block" id="data_div">
+				<h1>Data</h1>				
+				<p>Click to <button id="get_data">get data</button> associated with this div element</p><br>
+				Click to <button id="set_data">set data</button> = to "hello world" and get data again.
+			</div>
+
+			<div class="section_block" id="before">
+				<h1>Before</h1>
+				<button>Before</button>
+				<p>Click the button to insert new text <b>before</b> this paragraph</p>
+			</div>
+
+			<div class="section_block" id="after">
+				<h1>After</h1>
+				<button>After</button>
+				<p>Click the button to insert new text <b>after</b> this paragraph</p>
+			</div>
+
+			<div class="section_block" id="append">
+				<h1>Append</h1>
+				<button>Append</button>
+				<p>Click the button to <b>append</b> new text in this paragraph</p>
+			</div>
+
+			<div class="section_block" id="show">
+				<h1>Show</h1>
+				<button >Show</button>
+				<p>Click the button to show hidden text</p>
+				<h6 id="show_me">Hidden text shown "slowly" here.</h6>
+			</div>
+
+			<div class="section_block" id="hide">
+				<h1>Hide</h1>
+				<button>Hide</button>
+				<p>Click the button to now hide what was shown in "Show" above.</p>				
+			</div>
+
+			<div class="section_block" id="toggle">
+				<h1>Toggle</h1>
+				<button>Toggle</button>
+				<p>Click the button to toggle hidden text on and off</p>
+				<p style="display: none">eeek! Hide hide! Toggle me again please!</p>
+			</div>
+
+			<div class="section_block" id="fadein">
+				<h1>Fadein</h1>
+				<button>Fadein</button>
+				<p>Click the button to fadein a picture</p>				
+			</div>
+			
+			<div class="section_block" id="fadeout">
+				<h1>Fadeout</h1>
+				<button>Fadeout</button>
+				<p>Click the button to fade out the picture(from Fadein, SlideDown, or SlideToggle display).</p>
+			</div>
+
+			<div class="section_block" id="slidedown">
+				<h1>Slidedown</h1>
+				<button>Slidedown</button>
+				<p>Click the button to slide down a picture.</p>
+			</div>
+
+			<div class="section_block" id="slideup">
+				<h1>Slideup</h1>
+				<button>Slideup</button>
+				<p>Click the button to slide up a picture (from FadeIn, SlideDown, or SlideToggle display).</p>
+			</div>
+
+			<div class="section_block" id="slidetoggle">
+				<h1>Slidetoggle</h1>
+				<button>Slidetoggle</button>
+				<p>Click the button to toggle the picture (from FadeIn, SlideDown, or SlideToggle display).</p>
+			</div>
+		</div> <!-- end main -->
+		<div id="footer"></div>
+	</div> <!-- end wrapper -->
+</body>
+</html>
