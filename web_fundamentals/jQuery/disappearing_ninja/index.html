@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Disappearing Ninja</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script
+			  src="https://code.jquery.com/jquery-2.2.4.js"
+			  integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+			  crossorigin="anonymous"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+
+			console.log("jQuery loaded successfully");
+			
+			//disappear
+			$('img').click(function(){
+				console.log('got fadeout');
+				$(this).css('visibility','hidden');
+			});
+			
+			//restore
+			$('#restore').click(function(){
+				console.log('got restore');
+				$('img').css('visibility','visible');
+			})
+		
+		})	// end document ready
+	</script>
+
+</head>
+<body>
+	<div id="wrapper">
+
+		<div id="header">
+			<h1>My jQuery basic assignment!</h1>
+			<img src="images/left_button.png" alt="home_button.png">
+			<img src="images/right_button.png" alt="home_button.png">
+			<img src="images/cancel_button.png" alt="home_button.png">
+			<img src="images/home_button.png" alt="home_button.png">
+			<div id="inputs">
+				<input  type="text" name="TBD">
+				<input type="text" name="search">
+			</div>
+		</div> <!-- end header -->
+		
+		<div id="main">
+			<h1>jQuery Assignment - Disappearing Ninja</h1>
+			
+			<img class="mouse" src="images/mouse.jpg" alt="mouse pic">
+			<img class="mouse" src="images/mouse.jpg" alt="mouse pic">
+			<img class="mouse" src="images/mouse.jpg" alt="mouse pic">
+			<img class="mouse" src="images/mouse.jpg" alt="mouse pic">
+			<img class="mouse" src="images/mouse.jpg" alt="mouse pic">
+			<img class="mouse" src="images/mouse.jpg" alt="mouse pic">
+			<img class="mouse" src="images/mouse.jpg" alt="mouse pic">
+			<img class="mouse" src="images/mouse.jpg" alt="mouse pic">
+
+			<button id="restore">Restore</button>
+
+		</div> <!-- end main -->
+		<div id="footer"></div>
+	</div> <!-- end wrapper -->
+</body>
+</html>
