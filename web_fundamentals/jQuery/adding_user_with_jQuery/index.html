@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title>Adding Users with jQuery</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script type="text/javascript">
+
+		$(document).ready(function(){
+				console.log("jQuery loaded...");
+
+				$("#user_form").change(function() {
+					console.log("got change");
+				});
+
+				
+				$('#submit').click(function() {
+					var new_first = ($('input[name="first_name"]').val());
+					var new_last = ($('input[name="last_name"]').val());
+					var new_email = ($('input[name="email"]').val());
+					var new_phone = ($('input[name="phone"]').val());
+
+					console.log('new data');
+					console.log(new_first);
+					console.log(new_last);
+					console.log(new_email);
+					console.log(new_phone);
+
+					$('#list_table').append("<tr><td>" + new_first + "</td>	<td>" + new_last + "</td><td>" + new_email + "</td><td>" + new_phone + "</td></tr>")						
+				}); //end submit
+
+		}) // end document.ready
+
+	</script> <!-- end javascript -->
+	
+</head>
+<body>
+<div id=wrapper>
+	<div id="main">
+	
+		<table id="list_table">
+			<tr>
+				<th>First Name</th>
+				<th>Last Name</th>
+				<th>Email Address</th>
+				<th>Contact #</th>			
+			</tr>
+		</table>
+
+		<div id="adduser">
+			<h1>Add User</h1>
+			<form id="user_form" action="" method="">
+					<table id="form_table">
+						<tr>
+							<td class="rt_align">First name:</td>
+							<td><input type="text" name="first_name" value="First Name"></td>
+						</tr>
+						<tr>
+							<td class="rt_align">Last name:</td>	
+							<td><input type="text" name="last_name" value="Last Name"></td>
+						</tr>
+						<tr>
+							<td class="rt_align">Email Address:</td>	
+							<td><input type="text" name="email" value="Email Address"></td>
+						</tr>
+						<tr>
+							<td class="rt_align">Contact No:</td>	
+							<td><input type="text" name="phone" value="Phone #"></td>
+						</tr>
+					</table>
+			</form>
+			<button id="submit">Add User</button>
+		</div> <!-- end adduser -->
+
+	</div> <!-- end main -->
+</div>  <!-- end wrapper -->
+	
+</body>
+</html>

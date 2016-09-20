@@ -1,0 +1,50 @@
+*{
+	margin:0px;
+	padding: 0px;
+	/*outline: 1px dotted blue;*/
+}
+
+#wrapper{
+	width: 1000px;
+	margin: 0px;
+	padding: 20px;
+}
+#main{
+	font-family: "Times New Roman", Times, serif;
+}
+#list_table{
+	border: 1px solid black;
+}
+	#list_table th, #list_table td{
+		padding: 2px 30px 2px 5px;
+		/*text-align: left;*/
+	}
+	#list_table td{
+		padding: 2px:
+		text-align: left;
+	}
+#adduser{
+	margin-top: 40px;
+}
+	#adduser h1{
+	width: 300px;
+	font-size: 32px;
+	border-bottom: 2px solid grey;
+	margin-bottom: 20px;
+	}
+
+#form_table{
+	margin: 10px 0px 30px 10px;
+	font-family: Lucidia;
+}
+#form_table td{
+	padding: 3px 0px;
+	font-size: 18px;
+}
+.rt_align{
+	text-align: right;
+}
+#submit{
+	margin-left: 230px;
+	padding: 2px 5px;
+}
