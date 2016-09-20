@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Ninja-Cat</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script
+			  src="https://code.jquery.com/jquery-2.2.4.js"
+			  integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+			  crossorigin="anonymous"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+
+			console.log("jQuery loaded successfully");
+		
+		$('img').click(function(){
+				console.log("got click");
+				var myClass = $(this).attr("class");
+		   	console.log("myClass=", myClass);
+		   	var index=$(this).attr("data-alt-source");
+				console.log("attr index=", index);
+				$('img.cat[data-alt-source="' + index + '"]').toggle();
+				$('img.ninja[data-alt-source="' + index + '"]').toggle();
+		 	});
+		
+		})	// end document ready
+	</script>
+
+</head>
+<body>
+	<div id="wrapper">
+
+		<div id="header">
+			<h1>My jQuery basic assignment!</h1>
+			<img src="images/left_button.png" alt="home_button.png"/>
+			<img src="images/right_button.png" alt="home_button.png"/>
+			<img src="images/cancel_button.png" alt="home_button.png"/>
+			<img src="images/home_button.png" alt="home_button.png"/>
+			<div id="inputs">
+				<input  type="text" name="TBD">
+				<input type="text" name="search">
+			</div>
+		</div> <!-- end header -->
+		
+		<div id="main">
+			<h1>jQuery Assignment - Ninja-Cat</h1>
+			
+				<img class="cat" src="images/cat0.png" alt="cat0.png" data-alt-source="0"/>
+				<img class="ninja" style="display: none" src="images/ninja0.png" alt="ninja0.png" data-alt-source="0"/>
+				<img class="cat" src="images/cat1.png" alt="cat1.png" data-alt-source="1"/>
+				<img class="ninja" style="display: none" src="images/ninja1.png" alt="ninja1.png" data-alt-source="1"/>
+				<img class="cat" src="images/cat2.png" alt="cat2.png" data-alt-source="2"/>
+				<img class="ninja" style="display: none" src="images/ninja2.png" alt="ninja2.png" data-alt-source="2"/>
+				<img class="cat" src="images/cat3.png" alt="cat3.png" data-alt-source="3"/>
+				<img class="ninja" style="display: none" src="images/ninja3.png" alt="ninja3.png" data-alt-source="3"/>
+				<img class="cat" src="images/cat4.png" alt="cat4.png" data-alt-source="4"/>
+				<img class="ninja" style="display: none" src="images/ninja4.png" alt="ninja4.png" data-alt-source="4"/>
+
+		</div> <!-- end main -->
+		<div id="footer"></div>
+	</div> <!-- end wrapper -->
+</body>
+</html>
