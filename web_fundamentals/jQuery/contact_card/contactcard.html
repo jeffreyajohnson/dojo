@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Contact Card</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script
+			  src="https://code.jquery.com/jquery-2.2.4.js"
+			  integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+			  crossorigin="anonymous"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+
+			console.log("jQuery loaded successfully");
+
+			$('.input').focus(function(){
+				console.log("got focus");
+				 $(this).val('');
+			})
+
+			$("#user_form").change(function() {
+					console.log("got change");
+				});
+
+				
+			$('#submit').click(function() {
+				var new_first = ($('input[name="first_name"]').val());
+				var new_last = ($('input[name="last_name"]').val());
+				var new_description = ($('textarea[name="description"]').val());
+				console.log('new data');
+				console.log(new_first);
+				console.log(new_last);
+				console.log(new_description);
+				$('#right-side').append("<div class=\"card\"><h1>" + new_first + " " + new_last + "</h1><p>Click for description!</p><p class=\"hidden\">" + new_description + "</p></div>");			
+				return false;						
+			}); //end submit
+
+			$(document).on('click', '.card', function(){
+				console.log("got document.on click");
+				$(this).find('p').toggle();
+			});
+
+		})	// end document ready
+	</script>
+
+</head>
+<body>
+	<div id="wrapper">
+		<div id="header">
+			<h1>Contact Card</h1>
+			<img src="images/left_button.png" alt="home_button.png">
+			<img src="images/right_button.png" alt="home_button.png">
+			<img src="images/cancel_button.png" alt="home_button.png">
+			<img src="images/home_button.png" alt="home_button.png">
+			<div id="inputs">
+				<input  type="text" name="TBD">
+				<input type="text" name="search">
+			</div>
+		</div> <!-- end header -->
+
+		<div id="main">
+			
+			<div id="left-side">
+					<div id="adduser">			
+						<form id="user_form" action="" method="">
+								<table id="form_table">
+									<tr>
+										<td class="rt_align">First name:</td>
+										<td><input class="input" type="text" name="first_name" value="First Name" size="10"></td>
+									</tr>
+									<tr>
+										<td class="rt_align">Last name:</td>	
+										<td><input class="input" type="text" name="last_name" value="Last Name" size="10"></td>
+									</tr>
+								</table>
+								<h2>Description</h2>
+								<textarea class="input" name="description" rows="8" cols="27">Enter Description</textarea>
+						</form>
+						<button id="submit">Add User</button>
+						<p class='hidden'>can you see me now?</p>
+
+					</div>  <!-- end adduser -->
+			</div> <!-- end left-side -->
+
+			<div id="right-side">
+			</div> <!-- end right-side -->			
+		
+		</div> <!-- end main -->
+		<div id="footer"></div>
+	</div> <!-- end wrapper -->
+</body>
+</html>
