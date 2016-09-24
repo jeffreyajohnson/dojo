@@ -1,0 +1,27 @@
+
+#traveldates p{
+	margin-top: 40px;
+	font-size: 16px;
+
+}
+	#traveldates p:nth-child(2){
+		margin-left: 20px;
+		margin-bottom: 60px;
+	}
+
+	#name h4{
+		font-size: 16px;
+	}
+
+	#submit{
+		margin-top: 20px;
+	}
+
+	#name p{
+		display: inline-block;
+	}
+
+.hideme{
+	display: none;
+	color: red;
+}

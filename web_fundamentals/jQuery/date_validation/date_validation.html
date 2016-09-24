@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Date Validation</title>	
+	<script src="https://code.jquery.com/jquery-2.2.4.js"
+			  integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+			  crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js"></script>
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/themes/smoothness/jquery-ui.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	
+	<script type="text/javascript">
+		$(document).ready(function(){
+
+		$( function() {
+		$( ".datepicker" ).datepicker();
+		} );
+
+		$('#name_entry').focus(function(){
+			console.log("got focus");
+			 $(this).val('');
+			 if($("#toggle").attr('alt') === 'on'){
+			 	console.log("toggling reset");
+			 	$("#toggle").attr('alt', "off");
+		 		$("#toggle").toggle();					 	
+			 }					 
+		})
+
+		$("#name_entry").change(function() {
+			console.log("got change");
+			console.log("name span alt=", $('#toggle').attr("alt"));
+		});
+
+		$('#submit').click(function() {
+			var depdate=($('#from_date').val());
+			var retdate=($('#to_date').val());
+			var nameid=($('#name_entry').val());
+
+			if($("#name_entry").val().length === 0 ){
+				$("#toggle").toggle();
+				$("#toggle").attr('alt', "on")
+				console.log("Please enter a name");
+				return false;  //akin to break statement
+			}
+			if($("#from_date").val().length === 0 ){
+				alert("Please select departure date");
+				return false;  //akin to break statement
+			}
+			if($("#to_date").val().length === 0 ){
+				alert("Please select return date");
+				return false;  //akin to break statement
+			}
+			if(retdate < depdate){
+				alert("Return date cannot be before departure date");
+				return false;  //akin to break statement
+			}					
+
+			console.log("OK for data submission");
+
+			alert("All looks good for a fun filled exciting Cruise.\n\nHere is the reservation information:\n\nName: " + nameid +'\nDeparture date: '+depdate+"\nReturn date: "+retdate+"\n\nEnjoy Your Trip!!!")
+			return false; // "false" for development purposes only"
+			});
+
+		})// end document ready
+
+	</script>
+	
+</head>
+<body>
+<div class="container">
+	<h1>Welcome to the CodingDojo plan-a-Cruise!</h1>
+	<h3>Please enter your reservation information below:</h3>
+	<div id='traveldates'>
+		<p>From:<input type="text" class='datepicker' id="from_date" placeholder='Please select departure date'  size="25"></p>
+		<p>To:<input type="text" class='datepicker' id="to_date" placeholder='Please select return date' size='25'></p>
+	</div> <!-- end travel dates -->
+	<div id='name'>
+		<h4>Name:<h4>
+		<p><input id="name_entry" type="text" name="person" placeholder="Please enter name" size="30"></p>
+		<span id="toggle" class="hideme" alt="off">Your name can't be blank!</span>
+	</div> <!-- end name -->
+	<button id="submit" class="btn btn-primary">Check for Reservation</button>
+
+</div> <!-- end container -->
+
+</body>
+</html>
