@@ -1,0 +1,49 @@
+*{
+margin: 0px auto;
+padding: 0px;	
+/*outline: 1px dotted blue;*/
+}
+
+.formbox{
+	width: 400px;
+	border: 1px solid black;
+	margin-top: 30px;
+}
+
+.formbox h1{
+	text-align: center;
+	background-color: silver;
+	margin-top: 0px;
+	font-size: 28px;
+}
+
+#form_area{
+	border: 1px solid black;
+	margin: 10px;
+	padding: 20px 10px;
+	height: 
+
+}
+#user_input{
+	display: inline-block;
+	vertical-align: top;
+	margin-left: 40px;
+}
+
+#form_area p{
+	padding: 5px 2px 0px;
+	margin-bottom: 2px;	
+}
+
+button{
+	margin: 15px 0px 0px 200px;
+}
+
+.input-group{
+	width: 400px;
+margin: 10px;
+}
+
+label{
+	margin-left: 15px;
+}

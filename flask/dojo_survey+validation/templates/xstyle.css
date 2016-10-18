@@ -1,0 +1,60 @@
+*{
+margin: 0px auto;
+padding: 0px;	
+/*outline: 1px dotted blue;*/
+}
+
+#container{
+	/*background-color: yellow;*/
+}
+
+#surveybox{
+	width: 500px;
+	border: 1px solid black;
+	margin-top: 30px;
+}
+
+#surveybox h1{
+	text-align: center;
+	background-color: silver;
+}
+
+#form_area{
+	border: 1px solid black;
+	margin: 40px;
+	padding: 20px;
+
+}
+
+#usrform table{
+	margin-left: 0px;
+	padding: 0px;
+
+}
+#usrform table tr{
+	margin-top: 2px;
+	margin-bottom: 2px;
+
+}
+#usrform table td{
+	width: 130px;
+	padding: 5px 2px;	
+
+}
+#usrform p{
+	padding: 5px 2px;	
+}
+#usrform button{
+	margin: 5px 0px 0px 270px;
+	font-size: 16px;
+	padding: 2px;
+}
+select{
+	width: 200px;
+}
+
+#filler{
+	background-color: silver;
+	height: 20px;
+
+}

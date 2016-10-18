@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration Form</title>
+	<meta charset="utf-8">
+	<!-- Latest boostrap compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+	<div id="container">
+		<div class= formbox" id="user_input">
+			<h1>User Registration Form:</h1>
+			<div id="form_area">
+				<form action="/user" method="post" id="usrform">
+					<div class="form-group row">
+					 	<label for="user_fname" class="2 col-form-label">First Name:</label><br>
+					 	<div class="col-sm-10">
+						 	<input type="text" class="form-control" id="user_fname" name="ufname" placeholder="Enter first name">
+					 	</div>
+				    </div>
+				    <div class="form-group row">
+					    <label for="user_lname" class="2 col-form-label">Last Name:</label><br>
+					 	<div class="col-sm-10">
+						 	<input type="text" class="form-control" id="user_lname" name="ulname" placeholder="Enter last name">
+					 	</div>
+				    </div>
+				    <div class="form-group row">
+					    <label for="user_email" class="2 col-form-label">Email:</label><br>
+					 	<div class="col-sm-10">
+						 	<input type="email" class="form-control" id="user_email" name="uemail" placeholder="Enter email address">
+					 	</div>
+				    </div>
+				    <div class="form-group row">
+					    <label for="user_pwd" class="2 col-form-label">Password:</label><br>
+					 	<div class="col-sm-10">
+						 	<input type="password" class="form-control" id="user_pwd" name="upwd" placeholder="Enter password">
+					 	</div>
+				    </div>
+				    <div class="form-group row">
+					    <label for="confirm_pwd" class="2 col-form-label">Confirm Password:</label><br>
+					 	<div class="col-sm-10">
+						 	<input type="password" class="form-control" id="confirm_upwd" name="confirm_pwd" placeholder="Confirm password">
+					 	</div>
+				    </div>
+				    <button class="btn btn-primary" type="submit" form="usrform" value="Submit">Submit</button>
+			 	</form>
+				{% with messages = get_flashed_messages() %}
+				    {% if messages %}
+				      {% for message in messages %}
+				        <p>{{message}}</p>
+				      {% endfor %}
+				    {% endif %}
+				 {% endwith %}				
+			</div>
+		</div> <!-- end formbox -->
+	</div> <!-- end container -->	
+</body>
+</html>

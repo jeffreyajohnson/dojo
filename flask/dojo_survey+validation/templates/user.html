@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dojo Survey: User Display</title>
+	<meta charset="utf-8">
+	<!-- Latest boostrap compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+	<div id="container">
+		<div class="surveybox" id="user_display">
+			<h1>Dojo Survey: User Display</h1>
+			<div id="form_area">
+			<p><u>Submitted Info:</u></p>
+				<table>
+					<tr>
+					  <td>Name:</td><td>{{ name }}</td> 
+					</tr>
+					<tr>
+						<td>Dojo Location:</td><td>{{ location }}</td>
+					<tr>
+					 	<td>Favorite Language:</td><td>{{ language }} </td>
+					</tr>
+					<tr>
+						<td>Comment:</td><td> {{ comment }}</td>
+					</tr>
+				</table>
+			
+				<form action="/index" method="get" id="return">			
+					<button type="submit" form="return" value="Submit">Go Back</button>
+
+				</form>							
+			</div>
+			<div id="filler"> </div> 
+		</div>
+	</div>
+
+	
+</body>
+</html>

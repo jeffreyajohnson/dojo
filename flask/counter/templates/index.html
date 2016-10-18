@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Counter</title>
+	<meta charset="utf-8">
+	<!-- Latest boostrap compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+	<div id="container">
+		<div class="box">
+			<h1>Counter Assignment</h1>
+			<div id="form_area">
+			<h3>Counter</h3>
+			<p>{{session['count']}} times<p>
+			<h3></h3>
+
+			</div> <!-- end form area -->
+			<div id="filler"> </div> 
+		</div> <!-- end box -->
+	</div> <!-- end container -->
+	
+</body>
+</html>
