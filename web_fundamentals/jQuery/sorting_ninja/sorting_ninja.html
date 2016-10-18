@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>jQuery-UI script template file</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/themes/smoothness/jquery-ui.css">
+	<script src="https://code.jquery.com/jquery-2.2.4.js"
+			  integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+			  crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+
+  	$(function() {
+  		console.log('got sort');
+	    $( "#sortable" ).sortable();
+	    
+	  } );
+
+})	// end document ready
+	</script>
+
+</head>
+<body>
+	<div id='wrapper'>
+		<div id='main'>
+			<ul id='sortable'>
+				<li><img src="images/sort1.png" alt='sort1.png'></li>
+				<li><img src="images/sort2.png" alt='sort2.png'></li>
+				<li><img src="images/sort3.png" alt='sort3.png'></li>
+				<li><img src="images/sort4.png" alt='sort4.png'></li>
+				<li><img src="images/sort5.png" alt='sort5.png'></li>
+			</ul>
+		</div> <!-- end main -->
+	</div> <!-- end wrapper -->
+
+</body>
+</html>
