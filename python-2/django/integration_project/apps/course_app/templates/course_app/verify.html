@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Courses</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	{% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'course_app/css/style.css' %}">
+
+</head>
+<body>
+<div id='container'>
+
+	<div id='verify_inset'>
+		<h1>Delete a course</h1>
+		<div id="verify">
+			<h2>Are you sure you want to delete the following course?</h2>
+			{% for course in courses %}
+			<table>
+					<tr>
+						<td>Name: </td><td>{{course.name}}</td>				
+					</tr>
+					<tr>
+						<td>Description:</td><td>{{course.description}}</td>
+					</tr>
+				</table>
+			
+		</div>
+		<form action="{% url 'courses:verify-delete' id=course.id verification='cancel' %}" id='cancel' method="POST">
+		{% csrf_token %}
+			<button  id='submit_btn_no' class="btn btn-primary" type="submit" name="no">No</button>
+		</form>
+		<form action="{% url 'courses:verify-delete' id=course.id verification='confirm' %}" id='confirm' method="POST">
+		{% csrf_token %}	
+			<button action="courses:delete/{{course.id}}/confirm" id='submit_btn_ok' class="btn btn-danger" type="submit" name="yes">Yes! I want to delete this</button>
+		</form>
+		{% endfor %}
+	</div> 
+</div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>RandomWordGen</title>
+	{% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+<body>
+<div id="navbar">
+      <ul>
+        <li><a href=" {% url 'courses:index' %} ">Manage (add/delete) Courses</a></li>
+        <li><a href=" {% url 'login:manage_user' %} ">Manage Users</a></li> 
+        <li><a href=" {% url 'courses:enroll' %} ">Enroll Users </a></li>  
+        <li><a href=" {% url 'time-display:index' %} ">Time-Display</a></li>
+        <li><a href=" {% url 'ninja-gold:index' %} ">Ninja-Gold</a></li>
+        <!-- <li><a href=" {% url 'random-word:index' %} ">Random Word</a></li> -->
+      </ul>
+ </div> <!-- end navbar -->
+<div id='container'> 
+	<h2>Random Word Generator</h2>
+	<div>
+		<h3>Random Word (attempt #{{request.session.count}})</h3>
+
+		<h1 id="display">{{request.session.word}}</h1>
+	</div>
+	<form action="random_gen" method="POST">
+		{% csrf_token %}
+		<input type="submit" name="generate" value="Generate">
+	</form>
+</div>
+</body>
+</html>

@@ -1,0 +1,93 @@
+*{
+	/*margin: 0px auto;*/
+	padding: 0px;	
+	/*outline: 1px dotted blue;*/
+}
+
+#container{
+	margin: 0px auto;
+	padding: 2px 20px;
+	/*background-color: yellow;*/
+	width: 500px;
+	border: 1px solid black;
+}
+
+label{
+	margin-left: 15px;
+}
+
+textarea{
+	border: 1px solid black;
+	width: 350px;
+	height: 200px;
+	overflow: auto;
+	margin: 20px 0px 20px 20px;
+	padding:10px;
+}
+#post_button{
+	margin: 10px;
+	padding: 2px 20px;
+}
+#header{
+	border-bottom: 2px solid black
+}
+#header h1{
+	width: 200px;
+	display: inline-block;
+	font-weight: bold;
+	color: red
+}
+
+/*.note{
+	border: 1px solid black;
+	width: 350px;
+	height: 200px;
+	overflow: auto;
+	margin: 20px 0px 20px 20px;
+	padding:10px;	
+}*/
+#text_input{
+	width: 400px;
+	height: 100px;
+}
+.note_description{
+	border: 1px solid black;
+	text-align: top;
+	vertical-align: top;
+	width: 300px;
+	height: 200px;
+	overflow: auto;
+	margin: 20px 0px 20px 20px;
+	padding:10px;	
+}
+
+.title_area{
+	margin: 10px
+}
+.note_title, .title_area a{
+	display: inline-block;
+}
+.note_title{
+	width: 200px;
+	margin-left: 10px;
+	font-size: 18px;
+	font-weight: bold;
+}
+.title_area a{
+	margin-left: 100px;
+	font-style: underline;
+}
+input[type="submit"]{
+    display : none;
+}
+.title_area input{
+	border: none;
+}
+.submit_btn{
+	vertical-align: top;
+	margin: 40px 0px 0px 10px;
+}
+
+.note, .submit_btn{
+	display: inline-block;
+}

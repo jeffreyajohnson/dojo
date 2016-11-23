@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>AJAX Notes</title>
+<meta charset="utf-8">
+	<!-- Latest boostrap compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script> -->
+    <script
+			  src="https://code.jquery.com/jquery-2.2.4.js"
+			  integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+			  crossorigin="anonymous"></script>
+	
+	<script>
+    // 	$(document).ready(function(){
+	   //    	$('textarea').on('focus', function () {
+				// $(this).parents('form').find('input[type="submit"]').show();
+    // 			});
+    //   	});
+
+
+	$(document).ready(function(){
+
+        $('form').submit(function(){
+    		path= $(this).attr('action')
+        	$.post(path,  
+        		$(this).serialize(), 
+        		function(res) {  
+            $('#notes_display').html(res); 
+          });
+        	console.log("this");
+        	console.log($(this));
+        	console.log($(this).attr('action'));
+
+        	return false;
+        });
+      });
+    </script>
+	
+
+</head>
+<body>
+	<div id="container">
+		<div id="header">
+			<marquee>running................</marquee>
+			<h1>My Notes</h1>			
+		</div>	
+	
+		<div id="notes_display">
+			
+			{% for note in notes %}	
+				<div class="title_area" id="{{ note['id'] }}">
+					<form class="note_title" action="/notes/title/{{ note['id'] }}/edit" method='Post'>
+						<input type="text" name="note_title" value="{{ note['title'] }}">						
+					</form>
+					<a href="/notes/{{ note['id'] }}/delete">delete</a>
+				</div>
+
+				<div class="note" id="note_{{ note['id'] }}" >
+					<form action="/notes/{{ note['id'] }}/edit" method='Post'>
+						<!-- <input class="note_description" type="text" name="note" value="{{ note['description'] }}"> -->
+						<textarea action="/notes/{{ note['id'] }}/edit" name="revised_note" method='Post'>{{ note['description'] }}</textarea>
+						<div class="submit_btn">
+							<input class="no_show" type="submit" style="display:none"  />
+						</div>
+
+					</form>	
+						
+				</div>
+			{% endfor %}
+
+			<form action="/notes/new" class="post_note_class" id='post_note' method='Post'>	
+				<input type="text" name="note_title" placeholder="Insert note title here"><br>
+				<textarea id="text_input" name="new_note"></textarea>
+				<br>
+				<button class="btn btn-primary" type="submit" form="post_note" id="post_button" value="Submit">Add Note</button><br>
+			</form>					
+		</div>  <!-- end notes_display -->	
+							
+
+	</div> <!-- end container -->
+</body>
+</html>

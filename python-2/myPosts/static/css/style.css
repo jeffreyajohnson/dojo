@@ -1,0 +1,45 @@
+*{
+	margin: 0px auto;
+	padding: 0px;	
+	/*outline: 1px dotted blue;*/
+}
+
+#container{
+	/*margin:30px;*/
+	padding: 2px 20px;
+	/*background-color: yellow;*/
+	width: 960px;
+	border: 1px solid black;
+}
+
+label{
+	margin-left: 15px;
+}
+
+#text_input{
+	width: 400px;
+	height: 100px;
+}
+#post_button{
+	margin: 10px;
+	padding: 2px 20px;
+}
+#header{
+	border-bottom: 2px solid black
+}
+#header h1{
+	width: 200px;
+	display: inline-block;
+	font-weight: bold;
+	color: red
+}
+.post{
+	border: 1px solid black;
+	width: 200px;
+	height: 200px;
+	display: inline-block;
+	margin: 20px 0px 20px 20px;
+	padding:10px;
+	overflow: auto;
+}
+

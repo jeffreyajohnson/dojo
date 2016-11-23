@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Manage Courses</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	{% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'course_app/css/style.css' %}">
+
+</head>
+<body>
+<div id='container'>
+	<div id="navbar">
+      <ul>
+        <!-- <li><a href=" {% url 'courses:index' %} ">Manage (add/delete) Courses</a></li> -->
+        <li><a href=" {% url 'login:manage_user' %} ">Manage Users</a></li> 
+        <li><a href=" {% url 'courses:enroll' %} ">Enroll Users </a></li>  
+        <li><a href=" {% url 'time-display:index' %} ">Time-Display</a></li>
+        <li><a href=" {% url 'ninja-gold:index' %} ">Ninja-Gold</a></li>
+        <li><a href=" {% url 'random-word:index' %} ">Random Word</a></li>
+      </ul>
+ </div> <!-- end navbar -->
+
+	<div id='index_inset'>
+		<h1>Manage (add/delete) student courses</h1>
+		<div id='input_area'>
+			<h2>Add a new course</h2>
+			<form action="add_course" id='course_form' method="POST">
+				{% csrf_token %}
+				<table>
+					<tr>
+						<td>Catalog No: </td>
+						<td><input type="text" name="catalogNo"></td>
+					</tr>
+					<tr>
+						<td>Name: </td>
+						<td><input type="text" name="name"></td>
+					</tr>
+					<tr>
+						<td>Description:</td>
+						<td><textarea name="description" form='course_form'></textarea></td>
+					</tr>
+				</table>
+				<input id='submit_btn' class="btn btn-primary" type="submit" name="Add">			
+			</form>
+		</div>
+		<div id='summary_display'>
+			<h2>Courses</h2>
+			<table class="table table-bordered">
+				<tr>
+					<th>Course</th><th>Title</th><th>Description</th><th>Date Added</th><th>Actions</th>
+				</tr>
+				{% for course in courses %}
+				<tr>
+					<td>{{course.catalogNo}}</td>
+					<td>{{course.name}}</td>
+					<td>{{course.description}}</td>
+					<td>{{ course.created_at}}</td>
+					<td><a href="delete_course/{{course.id}}", method='POST'>delete</a></td>
+				</tr>
+				{% endfor %}
+			</table>
+		</div>
+	</div>
+</div>
+</body>
+</html>

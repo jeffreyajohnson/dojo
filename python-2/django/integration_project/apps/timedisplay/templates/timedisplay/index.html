@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Time Display</title>
+	
+	<meta charset="utf-8">
+	{% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'css/timedisplay.css' %}">
+
+	</head>
+<body>
+<div id="navbar">
+      <ul>
+        <li><a href=" {% url 'courses:index' %} ">Manage (add/delete) Courses</a></li>
+        <li><a href=" {% url 'login:manage_user' %} ">Manage Users</a></li> 
+        <li><a href=" {% url 'courses:enroll' %} ">Enroll Users </a></li>  
+        <!-- <li><a href=" {% url 'time-display:index' %} ">Time-Display</a></li> -->
+        <li><a href=" {% url 'ninja-gold:index' %} ">Ninja-Gold</a></li>
+        <li><a href=" {% url 'random-word:index' %} ">Random Word</a></li>
+      </ul>
+ </div> <!-- end navbar -->
+<div id="container">
+<h2>Date and Time</h2>
+	<h3 id="leader_text">The current time and date:</h3>
+	<div id="display">
+		<h1>{{ date }} </h1>
+		<h1>{{ clock }}</h1>
+	</div>
+</div> 	
+</body>
+</html>
